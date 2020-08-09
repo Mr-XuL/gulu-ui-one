@@ -30,7 +30,7 @@ export default {
   components: { Topnav },
   setup() {
     const menuVisible = inject<Ref<boolean>>("xxx");
-    return {menuVisible}
+    return { menuVisible };
   },
 };
 </script>
@@ -40,10 +40,7 @@ aside {
   background: lightblue;
   width: 150px;
   padding: 16px;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  padding-top: 70px;
+
   > h2 {
     margin-bottom: 4px;
   }
@@ -51,6 +48,12 @@ aside {
     > li {
       padding: 4px 0;
     }
+  }
+  @media (max-width: 500) {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    padding-top: 70px;
   }
 }
 </style>
