@@ -5,6 +5,7 @@
 
 <script lang="ts">
 import { ref, provide } from 'vue'
+import { router } from './route'
 
 export default {
   name: 'App',
@@ -12,6 +13,11 @@ export default {
     const width = document.documentElement.clientWidth
     const menuVisible = ref(width <= 500 ? false :true)
     provide('xxx',menuVisible)
+    if(width <= 500 ){ 
+    router.afterEach(()=>{
+      menuVisible.value=false;
+    })
+    }
   }
 }
 </script>
